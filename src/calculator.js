@@ -2,10 +2,10 @@
 // Each of these functions should take two numbers and return the correct calculation.
 
 const calculator = {
-	add: (a, b) => 0,
-	subtract: (a, b) => 0,
-	multiply: (a, b) => 0,
-	divide: (a, b) => 0,
+	add: (a, b) => a + b,
+	subtract: (a, b) => a - b,
+	multiply: (a, b) => a * b,
+	divide: (a, b) => a / b,
 };
 
 export default calculator;
