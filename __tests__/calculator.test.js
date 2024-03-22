@@ -11,4 +11,7 @@ describe("calculator", () => {
 		expect(calculator).toHaveProperty(operationName);
 		expect(typeof operation).toBe("function");
 	});
+	it.each(operations)("%s returns a number", (_, operation) => {
+		expect(typeof operation(12, 3)).toBe("number");
+	});
 });
