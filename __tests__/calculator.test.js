@@ -17,4 +17,7 @@ describe("calculator", () => {
 	it.each(operations)("%s performs operation on two numbers", (_, operation, result) => {
 		expect(operation(12, 3)).toBe(result);
 	});
+	it("divide returns an error if b === 0", () => {
+		expect(() => calculator.divide(12, 0)).toThrow("Error: 0 is not a valid divisor");
+	});
 });
