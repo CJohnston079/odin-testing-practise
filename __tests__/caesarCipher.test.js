@@ -8,4 +8,12 @@ describe("caesarCipher", () => {
 		expect(caesarCipher("Hello World!", 0)).toBe("Hello World!");
 		expect(caesarCipher("Hello World!")).toBe("Hello World!");
 	});
+	it("returns a string shifted by shiftFactor", () => {
+		expect(caesarCipher("hello world", 1)).toBe("ifmmp xpsme");
+		expect(caesarCipher("hello world", 3)).toBe("khoor zruog");
+	});
+	it("works when shiftFactor is a negative number", () => {
+		expect(caesarCipher("hello world", -2)).toBe("fcjjm umpjb");
+		expect(caesarCipher("hello world", -3)).toBe("ebiil tloia");
+	});
 });
