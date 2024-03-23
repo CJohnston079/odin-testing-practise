@@ -13,6 +13,11 @@
 // In this case you only need tests for the final caesarCipher function.
 // If it works as expected you can rest assured that your smaller helper functions are doing what they’re supposed to.
 
-export default caesarCipher = function (str, shiftFactor) {
-	return;
+export default caesarCipher = function (str, shiftFactor = 0) {
+	return str.replace(/[a-z]/gi, char => shiftChar(char, shiftFactor));
+};
+
+const shiftChar = function (char, shiftFactor) {
+	const charCode = char.charCodeAt(0);
+	return String.fromCharCode(charCode + shiftFactor);
 };
