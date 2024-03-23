@@ -16,4 +16,8 @@ describe("caesarCipher", () => {
 		expect(caesarCipher("hello world", -2)).toBe("fcjjm umpjb");
 		expect(caesarCipher("hello world", -3)).toBe("ebiil tloia");
 	});
+	it("wraps characters from z to a and vice versa", () => {
+		expect(caesarCipher("hello world", 5)).toBe("mjqqt btwqi");
+		expect(caesarCipher("hello world", -5)).toBe("czggj rjmgy");
+	});
 });
