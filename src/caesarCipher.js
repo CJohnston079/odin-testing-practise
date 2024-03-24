@@ -19,5 +19,14 @@ export default caesarCipher = function (str, shiftFactor = 0) {
 
 const shiftChar = function (char, shiftFactor) {
 	const charCode = char.charCodeAt(0);
-	return String.fromCharCode(charCode + shiftFactor);
+	let shiftedCharCode = charCode;
+
+	if (char.match(/[a-z]/i)) {
+		const isLowerCase = char === char.toLowerCase();
+		const minCharCode = isLowerCase ? 97 : 65;
+
+		shiftedCharCode = ((((charCode - minCharCode + shiftFactor) % 26) + 26) % 26) + minCharCode;
+	}
+
+	return String.fromCharCode(shiftedCharCode);
 };
