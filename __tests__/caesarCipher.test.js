@@ -20,4 +20,8 @@ describe("caesarCipher", () => {
 		expect(caesarCipher("hello world", 5)).toBe("mjqqt btwqi");
 		expect(caesarCipher("hello world", -5)).toBe("czggj rjmgy");
 	});
+	it("preserves original case of characters", () => {
+		expect(caesarCipher("Hello World", 6)).toBe("Nkrru Cuxrj");
+		expect(caesarCipher("Hello World", -6)).toBe("Byffi Qilfx");
+	});
 });
