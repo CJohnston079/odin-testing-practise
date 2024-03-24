@@ -24,4 +24,8 @@ describe("caesarCipher", () => {
 		expect(caesarCipher("Hello World", 6)).toBe("Nkrru Cuxrj");
 		expect(caesarCipher("Hello World", -6)).toBe("Byffi Qilfx");
 	});
+	it("preserves punctuation", () => {
+		expect(caesarCipher("Hello World!", 6)).toBe("Nkrru Cuxrj!");
+		expect(caesarCipher("Hello World!", -10)).toBe("Xubbe Mehbt!");
+	});
 });

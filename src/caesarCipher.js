@@ -14,7 +14,9 @@
 // If it works as expected you can rest assured that your smaller helper functions are doing what they’re supposed to.
 
 export default caesarCipher = function (str, shiftFactor = 0) {
-	return str.replace(/[a-z]/gi, char => shiftChar(char, shiftFactor));
+	const encodedStr = str.replace(/[a-z]/gi, char => shiftChar(char, shiftFactor));
+
+	return encodedStr;
 };
 
 const shiftChar = function (char, shiftFactor) {
