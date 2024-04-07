@@ -19,4 +19,7 @@ describe("reverseString", () => {
 	it("reverses an odd length string", () => {
 		expect(reverseString("testing")).toBe("gnitset");
 	});
+	it("preserves casing of characters", () => {
+		expect(reverseString("Test")).toBe("tseT");
+	});
 });
