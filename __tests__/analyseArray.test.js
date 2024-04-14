@@ -24,4 +24,7 @@ describe("analyseArray", () => {
 	it("returns the length of the array in the length property", () => {
 		expect(result.length).toBe(6);
 	});
+	it("throws an error if passed an array containing at least one non-numeric value", () => {
+		expect(() => analyseArray(["1", 2, true, 4, 5])).toThrow("array contains non-numeric values");
+	});
 });
