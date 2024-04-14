@@ -10,6 +10,10 @@
 // };
 
 export default analyseArray = function (arr) {
+	if (!arr.every(item => typeof item === "number")) {
+		throw new Error("array contains non-numeric values");
+	}
+
 	return {
 		average: getAverage(arr),
 		min: Math.min(...arr),
