@@ -10,5 +10,12 @@
 // };
 
 export default analyseArray = function (arr) {
-	return;
+	return {
+		average: getAverage(arr),
+		min: Math.min(...arr),
+		max: Math.max(...arr),
+		length: arr.length,
+	};
 };
+
+const getAverage = nums => nums.reduce((acc, val) => acc + val, 0) / nums.length;
