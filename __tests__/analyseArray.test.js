@@ -24,7 +24,28 @@ describe("analyseArray", () => {
 	it("returns the length of the array in the length property", () => {
 		expect(result.length).toBe(6);
 	});
-	it("throws an error if passed an array containing at least one non-numeric value", () => {
-		expect(() => analyseArray(["1", 2, true, 4, 5])).toThrow("array contains non-numeric values");
+
+	describe("error handling", () => {
+		it("throws an error if passed an array containing at least one non-numeric value", () => {
+			expect(() => analyseArray(["1", 2, true, 4, 5])).toThrow("array contains non-numeric values");
+		});
+	});
+
+	describe("performance testing", () => {
+		const threshold = 100;
+
+		it("handles large inputs", () => {
+			const largeInput = Array.from({ length: 10000000 }, () => Math.floor(Math.random() * 100));
+
+			const startTime = performance.now();
+
+			analyseArray(largeInput);
+
+			const endTime = performance.now();
+			const elapsedTime = endTime - startTime;
+
+			console.log(elapsedTime);
+			expect(elapsedTime).toBeLessThanOrEqual(threshold);
+		});
 	});
 });
