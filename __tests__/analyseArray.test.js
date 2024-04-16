@@ -6,6 +6,14 @@ describe("analyseArray", () => {
 	it("returns an object", () => {
 		expect(typeof result).toBe("object");
 	});
+	it("does not mutate the input array", () => {
+		const input = [1, 8, 3, 4, 2, 6];
+		const inputCopy = [...input];
+
+		analyseArray(input);
+
+		expect(input).toEqual(inputCopy);
+	});
 	it("returnsa na object with properties average, min, max and length", () => {
 		expect(result).toHaveProperty("average");
 		expect(result).toHaveProperty("min");
